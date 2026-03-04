@@ -3,6 +3,7 @@ import Header from '../Header/Header'
 import Home from '../HomePage/Home'
 import Offer from '../Offer/Offer'
 import HowItWorks from '../howitworks/HowItWorks'
+import Begin from '../Begin/Begin'
 
 const MainContainer = () => {
     return (
@@ -14,6 +15,7 @@ const MainContainer = () => {
             <div>
                 <Offer />
                 <HowItWorks />
+                <Begin />
             </div>
         </div>
     )
