@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../Header/Header'
 import Home from '../HomePage/Home'
 import Offer from '../Offer/Offer'
+import HowItWorks from '../howitworks/HowItWorks'
 
 const MainContainer = () => {
     return (
@@ -10,7 +11,10 @@ const MainContainer = () => {
             <div className='mt-30'>
                 <Home />
             </div>
-            <Offer />
+            <div>
+                <Offer />
+                <HowItWorks />
+            </div>
         </div>
     )
 }

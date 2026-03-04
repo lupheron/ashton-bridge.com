@@ -40,7 +40,7 @@
 
 @theme {
   --color-primary: #071626;
-  --color-secondary: #27405c;
+  --color-secondary: #1b2d42;
   --color-text: #4a9eff;
   --font-roboto: "Roboto", sans-serif;
 }
@@ -53,7 +53,9 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {}
+  :root {
+    
+  }
 }
 
 body {
