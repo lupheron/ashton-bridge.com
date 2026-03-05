@@ -61,7 +61,7 @@ const platformOverview = [
 
 const HowItWorks = () => {
     return (
-        <div>
+        <div id='howitworks'>
             <div className='w-[1825px] h-[767px] bg-secondary px-50 flex items-center justify-center gap-20 mt-40 border-1 rounded-[35px]'>
                 <div className='flex flex-col items-center justify-center text-white'>
                     <div>

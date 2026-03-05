@@ -4,8 +4,9 @@ import Home from '../HomePage/Home'
 import Offer from '../Offer/Offer'
 import HowItWorks from '../howitworks/HowItWorks'
 import Begin from '../Begin/Begin'
-
 import Reviews from '../Reviews/Reviews'
+import Contact from '../Contact/Contact'
+import Footer from '../Footer/Footer'
 
 const MainContainer = () => {
     return (
@@ -18,8 +19,14 @@ const MainContainer = () => {
                 <Offer />
                 <HowItWorks />
                 <Begin />
-                <Reviews />
             </div>
+
+            <div>
+                <Reviews />
+                <Contact />
+            </div>
+
+            <Footer />
         </div>
     )
 }
