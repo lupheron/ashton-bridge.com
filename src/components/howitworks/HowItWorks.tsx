@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import ApartmentIcon from '@mui/icons-material/Apartment';
@@ -79,12 +80,12 @@ const HowItWorks = () => {
                     </div>
                     <div className='mt-10'>
                         {steps.map((step, index) => (
-                            <div className='flex items-center justify-between gap-5'>
+                            <div key={index} className='flex items-center justify-between gap-5'>
                                 <div className='w-12 h-12 flex-shrink-0 bg-transparent border border-text rounded-full flex items-center justify-center'>
                                     <span className='text-text font-bold'>{index + 1}</span>
                                 </div>
                                 <div>
-                                    <div key={index} className='flex items-center gap-5 py-7'>
+                                    <div className='flex items-center gap-5 py-7'>
                                         <div>
                                             <h3 className='text-xl font-bold text-white'>{step.title}</h3>
                                             <p className='text-gray-400 text-sm mt-2'>{step.description}</p>
@@ -102,8 +103,8 @@ const HowItWorks = () => {
 
                     <div className='mt-5'>
                         {platformOverview.map((item, index) => (
-                            <div className='flex items-center justify-between border-b border-gray-400'>
-                                <div key={index} className='flex items-center gap-5 py-7'>
+                            <div key={index} className='flex items-center justify-between border-b border-gray-400'>
+                                <div className='flex items-center gap-5 py-7'>
                                     <div className='w-10 h-10 bg-transparent border border-text rounded-full flex items-center justify-center'>
                                         <item.icon className='text-text' />
                                     </div>
