@@ -3,7 +3,7 @@ import DefaultButton from '../Button/DefaultButton'
 
 const Home = () => {
     return (
-        <div id='home' className='px-70 flex flex-col items-center justify-center gap-7 text-center'>
+        <div className='px-70 flex flex-col items-center justify-center gap-7 text-center'>
             <DefaultButton text="Simplify your workflow" customClasses='w-60 h-12 rounded-[35px] liquid-button' />
             <h1 className='text-[80px] font-bold text-white'>Where <span className='text-text'>Logistics</span> Meets <br /> Innovation</h1>
 
