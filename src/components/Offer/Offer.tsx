@@ -15,7 +15,7 @@ const Offer = () => {
             className: "col-span-1 row-span-2 h-full",
         },
         {
-            backgroundImage: "/images/grid-container/it-services.jpg",
+            backgroundImage: "/images/grid-container/It-services.jpg",
             title: "IT Services",
             description: "Need a website, software solution, or technical support? Our IT division delivers custom digital products and ongoing tech support tailored to your business.",
             className: "col-span-1 h-[400px]",
