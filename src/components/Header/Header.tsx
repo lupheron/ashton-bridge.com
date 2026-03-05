@@ -4,7 +4,7 @@ import DefaultButton from '../Button/DefaultButton'
 
 const Header = () => {
     return (
-        <div className='px-70 font-roboto floating-header mx-30'>
+        <div className='w-400 px-70 font-roboto floating-header mx-30'>
             <div className='flex justify-between items-center py-2'>
                 <div>
                     <Image src="/ashton-logo.jpg" alt="Logo" width={100} height={100} className='rounded-[50%] w-25 h-23' />

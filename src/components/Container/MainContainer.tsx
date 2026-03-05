@@ -10,7 +10,7 @@ import Footer from '../Footer/Footer'
 
 const MainContainer = () => {
     return (
-        <div className='bg-primary font-roboto px-[40px] py-5' >
+        <div className='max-w-[1920px] mx-auto bg-primary font-roboto px-[40px] py-5' >
             <Header />
             <div className='mt-30'>
                 <Home />

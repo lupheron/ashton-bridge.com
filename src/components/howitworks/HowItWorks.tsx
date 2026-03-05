@@ -61,8 +61,8 @@ const platformOverview = [
 
 const HowItWorks = () => {
     return (
-        <div id='howitworks'>
-            <div className='w-[1825px] h-[767px] bg-secondary px-50 flex items-center justify-center gap-20 mt-40 border-1 rounded-[35px]'>
+        <div id='howitworks' className='px-50'>
+            <div className='w-full h-[767px] bg-secondary px-50 flex items-center justify-center gap-20 mt-40 border-1 rounded-[35px]'>
                 <div className='flex flex-col items-center justify-center text-white'>
                     <div>
                         <h1 className='text-[45px] font-bold text-white leading-tight'>Getting started is simple and fast</h1>
