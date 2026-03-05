@@ -11,8 +11,10 @@ import Footer from '../Footer/Footer'
 const MainContainer = () => {
     return (
         <div className='max-w-[1920px] mx-auto bg-primary font-roboto px-[40px] py-5' >
-            <Header />
-            <div className='mt-30'>
+            <div className='px-50'>
+                <Header />
+            </div>
+            <div className='mt-40'>
                 <Home />
             </div>
             <div>
