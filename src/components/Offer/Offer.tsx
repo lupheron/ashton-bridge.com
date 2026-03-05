@@ -15,15 +15,15 @@ const Offer = () => {
             className: "col-span-1 row-span-2 h-full",
         },
         {
-            backgroundImage: "/images/grid-container/It-services.jpg",
-            title: "IT Services",
-            description: "Need a website, software solution, or technical support? Our IT division delivers custom digital products and ongoing tech support tailored to your business.",
+            backgroundImage: "/images/grid-container/direct-match.jpg",
+            title: "Direct Match & Hire",
+            description: "No middlemen. Companies reach out directly to drivers and vice versa. Our smart matching surfaces the best fits based on location, route type, and requirements.",
             className: "col-span-1 h-[400px]",
         },
         {
-            backgroundImage: "/images/grid-container/Vehicle-parts.jpg",
-            title: "Vehicle Parts & Mechanics",
-            description: "Access a network of trusted mechanics and vehicle part suppliers. Keep your fleet on the road with fast sourcing and reliable repair services.",
+            backgroundImage: "/images/grid-container/verified-driver.jpg",
+            title: "Verified Driver Profiles",
+            description: "Every driver on Ashton-Bridge goes through a profile verification process. Companies can browse CDL classes, experience history, and availability — all in one place.",
             className: "col-span-2 h-[400px]",
         },
         {
