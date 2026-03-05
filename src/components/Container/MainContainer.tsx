@@ -5,6 +5,8 @@ import Offer from '../Offer/Offer'
 import HowItWorks from '../howitworks/HowItWorks'
 import Begin from '../Begin/Begin'
 
+import Reviews from '../Reviews/Reviews'
+
 const MainContainer = () => {
     return (
         <div className='bg-primary font-roboto px-[40px] py-5' >
@@ -16,6 +18,7 @@ const MainContainer = () => {
                 <Offer />
                 <HowItWorks />
                 <Begin />
+                <Reviews />
             </div>
         </div>
     )

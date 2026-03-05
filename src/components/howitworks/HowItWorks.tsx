@@ -62,7 +62,7 @@ const platformOverview = [
 const HowItWorks = () => {
     return (
         <div>
-            <div className='w-[1825px] h-[767px] bg-secondary px-70 flex items-center justify-center gap-20 mt-40 border-1 rounded-[35px]'>
+            <div className='w-[1825px] h-[767px] bg-secondary px-50 flex items-center justify-center gap-20 mt-40 border-1 rounded-[35px]'>
                 <div className='flex flex-col items-center justify-center text-white'>
                     <div>
                         <h1 className='text-[45px] font-bold text-white leading-tight'>Getting started is simple and fast</h1>
@@ -71,7 +71,7 @@ const HowItWorks = () => {
                     <h1 className='text-[60px] bg-primary px-10 py-2 rounded-[35px] text-white mt-10 liquid-button'>COMING SOON</h1>
                 </div>
             </div>
-            <div className='hidden px-70 flex items-center justify-center gap-20 mt-40'>
+            <div className='hidden px-50 flex items-center justify-center gap-20 mt-40'>
                 <div>
                     <div>
                         <h4 className='text-text font-bold tracking-wider uppercase text-sm mb-2'>HOW IT WORKS</h4>
