@@ -7,6 +7,7 @@ import Begin from '../Begin/Begin'
 import Reviews from '../Reviews/Reviews'
 import Contact from '../Contact/Contact'
 import Footer from '../Footer/Footer'
+import AboutUs from '../AboutUs/AboutUs'
 
 const MainContainer = () => {
     return (
@@ -16,6 +17,7 @@ const MainContainer = () => {
             </div>
             <div className='mt-40'>
                 <Home />
+                <AboutUs />
             </div>
             <div>
                 <Offer />

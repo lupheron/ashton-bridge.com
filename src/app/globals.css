@@ -41,6 +41,7 @@
 @theme {
   --color-primary: #071626;
   --color-secondary: #1b2d42;
+  --color-tertiary: #12233b;
   --color-text: #4a9eff;
   --font-roboto: "Roboto", sans-serif;
 }

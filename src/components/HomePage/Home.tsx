@@ -12,7 +12,7 @@ const Home = () => {
                 <DefaultButton text="Get Started" customClasses='w-40 bg-text text-white rounded-[35px]' />
                 <DefaultButton text="Explore Services" customClasses='w-40 bg-transparent text-text border border-text rounded-[35px]' />
             </div>
-            <div className='w-300 h-120 rounded-[35px] flex items-center justify-center bg-gradient-to-r from-secondary/40 to-primary liquid-button mt-20'>
+            <div className='hidden w-300 h-120 rounded-[35px] flex items-center justify-center bg-gradient-to-r from-secondary/40 to-primary liquid-button mt-20'>
                 <h1 className='text-2xl font-bold text-white'>COMING SOON</h1>
             </div>
         </div>
