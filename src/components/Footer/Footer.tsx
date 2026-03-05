@@ -18,8 +18,8 @@ const Footer = () => {
 
                 <div className='flex flex-col items-start justify-center gap-2 text-xl'>
                     <h2 className='text-gray-500 font-bold text-2xl tracking-[1px] mb-5'>Legal</h2>
-                    <Link href="/" className='hover:text-text transition-all duration-300'>Privacy Policy</Link>
-                    <Link href="/" className='hover:text-text transition-all duration-300'>Terms of Service</Link>
+                    <Link href="/privacy-policy" className='hover:text-text transition-all duration-300'>Privacy Policy</Link>
+                    <Link href="/terms-service" className='hover:text-text transition-all duration-300'>Terms of Service</Link>
                 </div>
             </div>
 
