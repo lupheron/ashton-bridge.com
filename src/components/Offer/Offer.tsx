@@ -9,13 +9,13 @@ const Offer = () => {
             className: "col-span-3 h-[400px]",
         },
         {
-            backgroundImage: "/images/grid-container/company-staffing.jpg",
+            backgroundImage: "/images/grid-container/company-staffing.png",
             title: "Company Staffing",
             description: "Freight and logistics companies can post openings and browse a qualified pool of drivers. Fill your fleet faster with Ashton-Bridge's smart matching system",
             className: "col-span-1 row-span-2 h-full",
         },
         {
-            backgroundImage: "/images/grid-container/direct-match.jpg",
+            backgroundImage: "/images/grid-container/direct-match.png",
             title: "Direct Match & Hire",
             description: "No middlemen. Companies reach out directly to drivers and vice versa. Our smart matching surfaces the best fits based on location, route type, and requirements.",
             className: "col-span-1 h-[400px]",
