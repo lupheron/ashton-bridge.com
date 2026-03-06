@@ -25,7 +25,7 @@ const reviews = [
 
 const Reviews = () => {
     return (
-        <div className='mt-40 px-50'>
+        <div className='mt-10 px-50'>
             <div className=' mb-16'>
                 <h4 className='text-text font-bold tracking-wider uppercase text-sm mb-2'>TESTIMONIALS</h4>
                 <h1 className='text-[45px] font-bold text-white leading-tight'>Trusted by drivers and <br /> companies alike</h1>

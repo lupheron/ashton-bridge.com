@@ -35,7 +35,7 @@ const Offer = () => {
     ]
 
     return (
-        <div id='about' className='mt-30 px-50'>
+        <div id='about' className='px-50'>
             <div className='flex justify-between items-end mb-15'>
                 <div className='flex flex-col'>
                     <h4 className='text-text font-bold tracking-wider uppercase text-sm mb-2'>WHAT WE OFFER</h4>
