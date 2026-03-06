@@ -30,7 +30,9 @@ const MainContainer = () => {
                 <Contact />
             </div>
 
-            <Footer />
+            <div className='bg-[linear-gradient(to_top,var(--color-primary)_calc(100%-250px),#24475c_100%)] rounded-[35px] py-10 mt-5'>
+                <Footer />
+            </div>
         </div>
     )
 }
