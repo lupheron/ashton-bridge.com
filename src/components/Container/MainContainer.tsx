@@ -11,11 +11,11 @@ import AboutUs from '../AboutUs/AboutUs'
 
 const MainContainer = () => {
     return (
-        <div className='max-w-[1920px] mx-auto bg-primary font-roboto px-[40px] py-5' >
+        <div className='max-w-[1920px] mx-auto bg-primary font-roboto px-[40px] py-5 bg-[radial-gradient(ellipse_at_50%_0%,#33627d_0%,transparent_600px),radial-gradient(circle_at_0%_0%,#24475c_0%,transparent_810px),radial-gradient(circle_at_100%_0%,#24475c_0%,transparent_810px)]' >
             <div className='px-50'>
                 <Header />
             </div>
-            <div className='bg-[linear-gradient(to_bottom,var(--color-primary)_calc(100%-250px),#24475c_100%)] rounded-[35px] py-10 mt-40'>
+            <div className='bg-[linear-gradient(to_bottom,transparent_calc(100%-250px),#24475c_100%)] rounded-[35px] py-10 mt-40'>
                 <Home />
                 <AboutUs />
             </div>

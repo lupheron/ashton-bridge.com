@@ -82,7 +82,7 @@ html {
 }
 
 @utility liquid-button {
-  background: linear-gradient(-45deg, #071626, #27405c, #4a9eff, #27405c);
+  background: linear-gradient(-45deg, #071626, #27405c, #27405c);
   background-size: 400% 400%;
   animation: liquid-gradient 10s ease infinite;
   backdrop-filter: blur(8px);

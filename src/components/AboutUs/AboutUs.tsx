@@ -17,7 +17,7 @@ const aboutUsData = [
 
 const AboutUs = () => {
     return (
-        <div className='w-[80%] mx-auto px-20 py-10 mt-48 flex items-start gap-40 bg-tertiary border border-blue-900 rounded-[35px]'>
+        <div className='w-[80%] mx-auto px-20 py-10 mt-48 flex items-start gap-40 bg-tertiary rounded-[35px] shadow-[0_0_40px_rgba(74,158,255,0.15)]'>
             <div className='flex flex-col items-start justify-center gap-5'>
                 <button className='text-text border borer-text tracking-[3px] bg-secondary/50 rounded-[35px] py-1 px-3 text-sm'>WHO WE ARE</button>
                 <h1 className='text-white text-[40px] font-bold'>Built on quality. Focused on results.</h1>
