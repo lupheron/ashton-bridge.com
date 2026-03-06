@@ -1,8 +1,15 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import DefaultButton from '../Button/DefaultButton'
+import ModalDefault from '../Modal/ModalDefault'
 
 const Header = () => {
+
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
     return (
         <div id='home' className='w-[80%] mx-auto px-10 font-roboto floating-header'>
             <div className='flex justify-between items-center py-2'>
@@ -19,10 +26,13 @@ const Header = () => {
                 </div>
 
                 <div className='w-60 flex justify-between items-center gap-2'>
-                    <DefaultButton text="Login" customClasses='w-30 h-12 text-lg text-white border-o rounded-[35px] hover:w-31 hover:h-14 transition-all duration-100' />
-                    <DefaultButton text="Sign Up" customClasses='w-30 h-12 text-lg text-white border-o rounded-[35px] hover:w-31 hover:h-14 transition-all duration-100' />
+                    <DefaultButton
+                        text="Get A Quote"
+                        customClasses='w-40 h-12 text-lg text-white border-o rounded-[35px] hover:w-41 hover:h-13 transition-all duration-100'
+                        onClick={handleOpen} />
                 </div>
             </div>
+            <ModalDefault open={open} handleClose={handleClose} />
         </div>
     )
 }
