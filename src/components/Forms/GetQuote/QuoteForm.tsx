@@ -25,7 +25,7 @@ const QuoteForm = ({ onSuccess }: QuoteFormProps) => {
     open: boolean
     message: string
     severity: 'success' | 'error'
-  }>({ open: false, message: '', severity: 'info' })
+  }>({ open: false, message: '', severity: 'success' })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
