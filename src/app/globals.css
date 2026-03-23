@@ -109,3 +109,18 @@ html {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@utility modal-enter {
+  animation: modal-in 0.25s ease-out forwards;
+}

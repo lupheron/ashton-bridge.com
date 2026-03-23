@@ -8,11 +8,12 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
+    width: 520,
+    maxWidth: '92vw',
+    bgcolor: 'transparent',
+    border: 'none',
+    boxShadow: 'none',
+    p: 0,
 };
 
 const ModalDefault = ({ open, handleClose }: { open: boolean, handleClose: () => void }) => {
@@ -22,14 +23,14 @@ const ModalDefault = ({ open, handleClose }: { open: boolean, handleClose: () =>
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
-            className='backdrop-blur-xs'
+            className="[&_.MuiBackdrop-root]:backdrop-blur-md [&_.MuiBackdrop-root]:bg-black/50"
         >
             <Box
                 sx={style}
-                className='!w-200 !bg-primary !border-none liquid-button rounded-[35px]'
+                className="!w-[520px] !bg-primary !border-0 liquid-button rounded-2xl shadow-2xl shadow-black/40 overflow-hidden modal-enter"
             >
-                <CancelIcon onClick={handleClose} className='absolute top-5 right-5 cursor-pointer text-white' />
-                <QuoteForm />
+                <CancelIcon onClick={handleClose} className="absolute top-5 right-5 cursor-pointer text-white/80 hover:text-white z-10 transition-colors" />
+                <QuoteForm onSuccess={handleClose} />
             </Box>
         </Modal>
     )
