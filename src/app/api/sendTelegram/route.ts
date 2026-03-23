@@ -15,25 +15,25 @@ const isValidEmail = (email: string) =>
 
 function formatMessage(data: TelegramPayload): string {
   const lines = [
-    '📋 *New Quote Request*',
+    '📋 New Quote Request',
     '',
-    `*Name:* ${data.name}`,
-    `*Email:* ${data.email}`,
-    `*Phone:* ${data.phone}`,
-    `*Company:* ${data.companyName}`,
-    `*Telegram:* ${data.telegramUsername || 'Not provided'}`,
+    `Name: ${data.name}`,
+    `Email: ${data.email}`,
+    `Phone: ${data.phone}`,
+    `Company: ${data.companyName}`,
+    `Telegram: ${data.telegramUsername || 'Not provided'}`,
   ]
   return lines.join('\n')
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const token = process.env.TELEGRAM_BOT_TOKEN
-    const chatId = process.env.TELEGRAM_CHAT_ID
+    const token = process.env.TELEGRAM_BOT_TOKEN?.trim()
+    const chatId = process.env.TELEGRAM_CHAT_ID?.trim()
 
     if (!token || !chatId) {
       return NextResponse.json(
-        { error: 'Telegram configuration missing' },
+        { error: 'Telegram configuration missing. Add TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in Vercel.' },
         { status: 500 }
       )
     }
@@ -69,16 +69,24 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         chat_id: chatId,
         text,
-        parse_mode: 'Markdown',
       }),
     })
 
-    const data = await res.json()
+    let data: { ok?: boolean; description?: string }
+    try {
+      data = await res.json()
+    } catch {
+      return NextResponse.json(
+        { error: 'Invalid response from Telegram API' },
+        { status: 502 }
+      )
+    }
 
     if (!data.ok) {
+      const msg = data.description || 'Failed to send to Telegram'
       console.error('Telegram API error:', data)
       return NextResponse.json(
-        { error: data.description || 'Failed to send to Telegram' },
+        { error: msg },
         { status: 502 }
       )
     }
