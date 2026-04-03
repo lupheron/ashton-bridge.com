@@ -12,6 +12,7 @@ const Footer = () => {
                     <h2 className='text-gray-500 font-bold text-2xl tracking-[1px] mb-5'>Company</h2>
                     <Link href="#home" className='hover:text-text transition-all duration-300'>Home</Link>
                     <Link href="#about" className='hover:text-text transition-all duration-300'>About</Link>
+                    <Link href="/services" className='hover:text-text transition-all duration-300'>Services</Link>
                     <Link href="#howitworks" className='hover:text-text transition-all duration-300'>How It Works?</Link>
                     <Link href="#contact" className='hover:text-text transition-all duration-300'>Contact</Link>
                 </div>

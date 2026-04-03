@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 type OfferCard = {
     title: string
@@ -7,6 +8,7 @@ type OfferCard = {
     backgroundImage?: string
     isComingSoon?: boolean
     comingSoonOnHover?: boolean
+    learnMoreHref?: string
 }
 
 const Offer = () => {
@@ -16,6 +18,7 @@ const Offer = () => {
             title: "SMM & Targeted Advertising",
             description: "Grow your company's online presence with data-driven social media campaigns. We handle audience targeting, ad creation, and performance tracking across Facebook, Instagram, LinkedIn, and more.",
             className: "col-span-3 h-[400px]",
+            learnMoreHref: "/services/smm",
         },
         {
             backgroundImage: "/images/grid-container/company-staffing.png",
@@ -57,44 +60,72 @@ const Offer = () => {
             </div>
 
             <div className='grid grid-cols-4 gap-6'>
-                {cards.map((card, index) => (
-                    <div
-                        key={index}
-                        className={`${card.className} rounded-[40px] p-10 flex flex-col justify-end relative overflow-hidden group cursor-pointer transition-all duration-500`}
-                        style={card.backgroundImage ? {
-                            backgroundImage: `url(${card.backgroundImage})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                        } : {}}
-                    >
-                        {card.backgroundImage && (
-                            <div className={`absolute inset-0 bg-black/55 rounded-[40px] ${card.comingSoonOnHover ? 'group-hover:opacity-0 transition-opacity duration-300' : ''}`}></div>
-                        )}
+                {cards.map((card, index) => {
+                    const shellClass = `${card.className} rounded-[40px] p-10 flex flex-col justify-end relative overflow-hidden group ${card.learnMoreHref ? 'cursor-pointer' : 'cursor-default'} transition-all duration-500`
+                    const bgStyle = card.backgroundImage
+                        ? {
+                              backgroundImage: `url(${card.backgroundImage})`,
+                              backgroundSize: 'cover' as const,
+                              backgroundPosition: 'center' as const,
+                          }
+                        : undefined
 
-                        <div className={`absolute -top-20 -right-20 w-60 h-60 bg-text/10 blur-[100px] rounded-full group-hover:bg-text/20 transition-all duration-500 ${card.comingSoonOnHover ? 'group-hover:opacity-0' : ''}`}></div>
+                    const body = (
+                        <>
+                            {card.backgroundImage && (
+                                <div
+                                    className={`absolute inset-0 bg-black/55 rounded-[40px] ${card.comingSoonOnHover ? 'group-hover:opacity-0 transition-opacity duration-300' : ''}`}
+                                />
+                            )}
 
-                        {card.comingSoonOnHover && (
                             <div
-                                className='absolute inset-0 z-20 rounded-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 liquid-button flex items-center justify-center pointer-events-none'
-                                style={{ border: 'none', outline: 'none' }}
-                            >
-                                <span className='text-2xl md:text-3xl font-bold text-white tracking-wide'>Coming soon</span>
-                            </div>
-                        )}
+                                className={`absolute -top-20 -right-20 w-60 h-60 bg-text/10 blur-[100px] rounded-full group-hover:bg-text/20 transition-all duration-500 ${card.comingSoonOnHover ? 'group-hover:opacity-0' : ''}`}
+                            />
 
-                        {!card.isComingSoon ? (
-                            <div className={`relative z-10 ${card.comingSoonOnHover ? 'group-hover:opacity-0 transition-opacity duration-300' : ''}`}>
-                                <h3 className='text-2xl font-bold text-white mb-3'>{card.title}</h3>
-                                <p className='text-gray-300 text-sm leading-relaxed max-w-[80%]'>{card.description}</p>
-                            </div>
-                        ) : (
-                            <div className='flex justify-between items-center w-full relative z-10'>
-                                <h3 className='text-2xl font-bold text-white'>{card.title}</h3>
-                                <p className='text-gray-400 text-sm italic'>{card.description}</p>
-                            </div>
-                        )}
-                    </div>
-                ))}
+                            {card.comingSoonOnHover && (
+                                <div
+                                    className="absolute inset-0 z-20 rounded-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 liquid-button flex items-center justify-center pointer-events-none"
+                                    style={{ border: 'none', outline: 'none' }}
+                                >
+                                    <span className="text-2xl md:text-3xl font-bold text-white tracking-wide">Coming soon</span>
+                                </div>
+                            )}
+
+                            {!card.isComingSoon ? (
+                                <div
+                                    className={`relative z-10 ${card.comingSoonOnHover ? 'group-hover:opacity-0 transition-opacity duration-300' : ''}`}
+                                >
+                                    <h3 className="text-2xl font-bold text-white mb-3">{card.title}</h3>
+                                    <p className="text-gray-300 text-sm leading-relaxed max-w-[80%]">{card.description}</p>
+                                    {card.learnMoreHref && (
+                                        <span className="mt-4 inline-block text-text text-sm font-semibold tracking-wide">
+                                            Learn more →
+                                        </span>
+                                    )}
+                                </div>
+                            ) : (
+                                <div className="flex justify-between items-center w-full relative z-10">
+                                    <h3 className="text-2xl font-bold text-white">{card.title}</h3>
+                                    <p className="text-gray-400 text-sm italic">{card.description}</p>
+                                </div>
+                            )}
+                        </>
+                    )
+
+                    if (card.learnMoreHref) {
+                        return (
+                            <Link key={index} href={card.learnMoreHref} className={shellClass} style={bgStyle}>
+                                {body}
+                            </Link>
+                        )
+                    }
+
+                    return (
+                        <div key={index} className={shellClass} style={bgStyle}>
+                            {body}
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )

@@ -87,7 +87,7 @@ const QuoteForm = ({ onSuccess }: QuoteFormProps) => {
     <div className="py-10 px-12 text-white">
       <div className="text-center mb-8">
         <h2 className="text-2xl font-semibold text-text tracking-wide mb-2">
-          Get a Quote
+          Request a consultation
         </h2>
         <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-text to-transparent mx-auto mb-4" />
         <p className="text-gray-400 text-sm">
@@ -104,7 +104,7 @@ const QuoteForm = ({ onSuccess }: QuoteFormProps) => {
         <InputDefault type="text" value={formData.company} label="Company Name" name="company" required onChange={handleChange} variant="quote" />
         <InputDefault type="text" value={formData.telegram} label="Telegram Username" name="telegram" onChange={handleChange} variant="quote" />
         <DefaultButton
-          text={isSubmitting ? 'Sending...' : 'Get A Quote'}
+          text={isSubmitting ? 'Sending...' : 'Request a consultation'}
           type="submit"
           disabled={isSubmitting}
           customClasses="w-full h-12 text-base font-semibold text-white bg-text hover:bg-text/90 rounded-xl mt-2 transition-all duration-200 shadow-lg shadow-[0_4px_20px_-2px_rgba(74,158,255,0.25)] hover:shadow-[0_6px_24px_-2px_rgba(74,158,255,0.35)] disabled:hover:bg-text"

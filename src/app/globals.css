@@ -124,3 +124,28 @@ html {
 @utility modal-enter {
   animation: modal-in 0.25s ease-out forwards;
 }
+
+/* Page sections: fade + slide-up (respect reduced motion) */
+@keyframes ab-page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility ab-page-enter {
+  opacity: 0;
+  animation: ab-page-enter 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ab-page-enter {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}
