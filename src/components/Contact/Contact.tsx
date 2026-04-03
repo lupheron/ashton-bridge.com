@@ -5,8 +5,8 @@ import EmailIcon from '@mui/icons-material/Email';
 
 const Contact = () => {
     return (
-        <div className='px-50 mt-40'>
-            <div id='contact' className='text-white bg-secondary rounded-[35px] py-20 px-20 liquid-button border-none'>
+        <div id="contact" className='px-50 mt-40 scroll-mt-28'>
+            <div className='text-white bg-secondary rounded-[35px] py-20 px-20 liquid-button border-none'>
                 <h1 className='text-6xl font-bold text-center'>Contact us</h1>
 
                 <div className='flex items-center justify-between mt-20'>

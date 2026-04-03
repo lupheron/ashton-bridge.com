@@ -17,12 +17,12 @@ const aboutUsData = [
 
 const AboutUs = () => {
     return (
-        <div className='w-[80%] mx-auto px-20 py-10 mt-48 flex items-start gap-40 bg-tertiary rounded-[35px] shadow-[0_0_40px_rgba(74,158,255,0.15)]'>
+        <div id="about" className='w-[80%] mx-auto px-20 py-10 mt-48 flex items-start gap-40 bg-tertiary rounded-[35px] shadow-[0_0_40px_rgba(74,158,255,0.15)] scroll-mt-28'>
             <div className='flex flex-col items-start justify-center gap-5'>
                 <button className='text-text border borer-text tracking-[3px] bg-secondary/50 rounded-[35px] py-1 px-3 text-sm'>WHO WE ARE</button>
                 <h1 className='text-white text-[40px] font-bold'>Built on quality. Focused on results.</h1>
                 <p className='text-gray-500 text-xl mt-5 leading-[40px]'>Ashton-Bridge was built with one standard in mind — excellence. We believe logistics companies deserve more than generic tools and slow processes. Every service we deliver is crafted with precision, backed by industry knowledge, and held to a high bar of quality.</p>
-                <p className='text-gray-500 text-xl mt-15 leading-[40px]'>We currently offer two focused services: a professional HR recruiting solution that connects companies with the right people fast, and a powerful company dashboard system that centralises your logistics operations — from incoming leads and quotes to offers and client management — all in one place.</p>
+                <p className='text-gray-500 text-xl mt-15 leading-[40px]'>We currently offer two focused services: a results-driven SMM targeting service that helps logistics brands attract clients, drivers, and partners through targeted digital campaigns across Facebook, Instagram, LinkedIn, and more — and a professional HR recruiting solution that connects companies with the right people fast.</p>
             </div>
 
             <div className='flex flex-col items-center justify-between'>
