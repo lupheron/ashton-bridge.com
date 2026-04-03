@@ -9,8 +9,7 @@ const Begin = () => {
             <p className='text-gray-400 text-lg w-140'>Whether you drive trucks or run a company, our platform gives you the tools and connections to move forward with confidence.</p>
 
             <div className='flex items-center justify-center gap-5'>
-                <DefaultButton text='Get Started' customClasses='hidden bg-text text-white'/>
-                <DefaultButton text='Coming soon' customClasses='bg-text text-white liquid-button'/>
+                <DefaultButton text='Get Started' customClasses='bg-text text-white liquid-button'/>
             </div>
         </div>
     )
