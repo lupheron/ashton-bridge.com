@@ -15,7 +15,7 @@ const Offer = () => {
     const cards: OfferCard[] = [
         {
             backgroundImage: "/images/grid-container/target.png",
-            title: "SMM & Targeted Advertising",
+            title: "SMM & HR System Management",
             description: "Grow your company's online presence with data-driven social media campaigns. We handle audience targeting, ad creation, and performance tracking across Facebook, Instagram, LinkedIn, and more.",
             className: "col-span-3 h-[400px]",
             learnMoreHref: "/services/smm",

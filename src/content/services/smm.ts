@@ -8,10 +8,10 @@ import type { ServiceDetailContent } from './types'
 
 export const smmServiceDetail: ServiceDetailContent = {
   slug: 'smm',
-  metaTitle: 'SMM Targeting & Advertising | Ashton-Bridge',
+  metaTitle: 'SMM Targeting & HR System Management | Ashton-Bridge',
   metaDescription:
     'Data-driven social campaigns for logistics: Facebook, Instagram, LinkedIn, audience targeting, and performance tracking.',
-  heroTitle: 'SMM Targeting & Advertising',
+  heroTitle: 'SMM Targeting & HR System Management',
   heroSubtitle:
     'Grow your company’s online presence with data-driven social media campaigns. We handle audience targeting, ad creative, and performance tracking so you reach the right drivers and partners.',
   HeroIcon: CampaignIcon,

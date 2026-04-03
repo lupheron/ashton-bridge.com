@@ -25,7 +25,7 @@ const services: ListingService[] = [
     href: '/services/smm',
     status: 'ACTIVE',
     statusClass: 'bg-transparent text-text border-text/50',
-    title: 'SMM Targeting & Advertising',
+    title: 'SMM Targeting & HR System Management',
     description:
       "Grow your company's online presence with data-driven social media campaigns. We handle audience targeting, ad creation, and performance tracking across Facebook, Instagram, LinkedIn, and more.",
     tags: ['Facebook Ads', 'Instagram', 'LinkedIn', 'Audience Targeting', 'Analytics'],
@@ -85,7 +85,7 @@ export default function ServicesListingView() {
           Built for logistics growth
         </h1>
         <p className="text-gray-500 text-base sm:text-lg leading-relaxed">
-          Ashton-Bridge combines <span className="text-gray-400">SMM targeting and advertising</span> with{' '}
+          Ashton-Bridge combines <span className="text-gray-400">SMM targeting and HR System Management</span> with{' '}
           <span className="text-gray-400">HR recruiting and staffing</span> — so you can attract the right audience
           and hire the right drivers with one partner.
         </p>
