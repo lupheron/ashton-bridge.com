@@ -20,9 +20,9 @@ export default function ServiceDetailView({ content }: Props) {
       <div className="ab-page-enter mb-10" style={{ animationDelay: '0ms' }}>
         <Link
           href="/services"
-          className="inline-flex items-center gap-2 text-text text-sm font-semibold tracking-wide hover:underline ml-5"
+          className="inline-flex items-center justify-center gap-2 text-text text-sm font-semibold tracking-wide ml-5 liquid-button w-14 h-14 rounded-[35px] border-none"
         >
-          ← Back to Services
+          ← 
         </Link>
       </div>
 
@@ -144,9 +144,9 @@ export default function ServiceDetailView({ content }: Props) {
         </div>
       </section>
 
-      {/* CTA banner — same surface as pricing plan cards */}
+      {/* CTA banner — solid bg so parent layout gradient doesn’t bleed through */}
       <section
-        className={`ab-page-enter rounded-[35px] border border-text/20 bg-secondary/60 px-8 py-12 sm:px-12 sm:py-14 text-center ${cardHover}`}
+        className={`ab-page-enter rounded-[35px] border border-text/20 bg-secondary px-8 py-12 sm:px-12 sm:py-14 text-center ${cardHover}`}
         style={{ animationDelay: '280ms' }}
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">{content.cta.heading}</h2>

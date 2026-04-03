@@ -9,7 +9,7 @@ export default function ServicesLayout({ children }: { children: ReactNode }) {
         <div className="px-50">
           <Header />
         </div>
-        <div className="bg-[linear-gradient(to_bottom,#33627d_0px,var(--color-primary)_320px,var(--color-primary)_calc(100%-320px),#24475c_100%)] rounded-[35px] py-10 mt-10 sm:mt-16">
+        <div className="bg-[linear-gradient(  var(--color-primary)_320px,var(--color-primary)_calc(100%-320px),#24475c_100%)] rounded-[35px] py-10 mt-10 sm:mt-16">
           {children}
         </div>
         <footer className="mt-10 pb-8 px-50 text-center text-gray-500 text-sm">
