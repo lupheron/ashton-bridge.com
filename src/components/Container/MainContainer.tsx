@@ -11,7 +11,7 @@ import AboutUs from '../AboutUs/AboutUs'
 
 const MainContainer = () => {
     return (
-        <div className='max-w-[1920px] mx-auto bg-primary font-roboto px-2 sm:px-4 md:px-6 lg:px-10 py-5 bg-[radial-gradient(ellipse_at_50%_0%,#33627d_0%,transparent_600px),radial-gradient(circle_at_0%_0%,#24475c_0%,transparent_810px),radial-gradient(circle_at_100%_0%,#24475c_0%,transparent_810px)]' >
+        <div className='max-w-[1920px] mx-auto bg-primary font-roboto px-2 sm:px-4 md:px-6 lg:px-40 py-5 bg-[radial-gradient(ellipse_at_50%_0%,#33627d_0%,transparent_600px),radial-gradient(circle_at_0%_0%,#24475c_0%,transparent_810px),radial-gradient(circle_at_100%_0%,#24475c_0%,transparent_810px)]' >
             <div className='px-1 sm:px-2 md:px-4'>
                 <Header />
             </div>

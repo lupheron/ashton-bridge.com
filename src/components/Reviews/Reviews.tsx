@@ -26,7 +26,7 @@ const reviews = [
 const Reviews = () => {
     return (
         <div className='mt-8 sm:mt-10 px-4 sm:px-8 md:px-10 lg:px-12'>
-            <div className='mb-8 sm:mb-12 md:mb-16'>
+            <div className='mb-8 sm:mb-12 md:mb-16 text-center sm:text-left'>
                 <h4 className='text-text font-bold tracking-wider uppercase text-sm mb-2'>TESTIMONIALS</h4>
                 <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold text-white leading-tight'>Trusted by drivers and <br className='hidden sm:block' /> companies alike</h1>
                 <p className='text-gray-400 mt-3 sm:mt-4 text-sm sm:text-base'>Real people. Real results. Here&apos;s what our community is saying about Ashton-Bridge.</p>

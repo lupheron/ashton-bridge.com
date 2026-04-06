@@ -45,8 +45,8 @@ const services: ListingService[] = [
 function ServiceCardContent({ service }: { service: ListingService }) {
   return (
     <div className="relative z-10 flex flex-col h-full">
-      <div className="flex items-start justify-between gap-4 mb-5">
-        <h2 className="text-xl sm:text-2xl font-bold text-white group-hover:text-text transition-colors duration-300">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-3 sm:gap-4 mb-5">
+        <h2 className="text-xl sm:text-2xl font-bold text-white text-center sm:text-left group-hover:text-text transition-colors duration-300">
           {service.title}
         </h2>
         <span
@@ -55,8 +55,8 @@ function ServiceCardContent({ service }: { service: ListingService }) {
           {service.status}
         </span>
       </div>
-      <p className="text-gray-500 text-sm leading-relaxed flex-grow mb-6">{service.description}</p>
-      <div className="flex flex-wrap gap-2 mb-6">
+      <p className="text-gray-500 text-sm leading-relaxed text-center sm:text-left flex-grow mb-6">{service.description}</p>
+      <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-6">
         {service.tags.map(tag => (
           <span key={tag} className={pillClass}>
             {tag}
@@ -64,9 +64,9 @@ function ServiceCardContent({ service }: { service: ListingService }) {
         ))}
       </div>
       {service.href ? (
-        <span className="text-text text-sm font-semibold tracking-wide mt-auto">Learn More →</span>
+        <span className="text-text text-sm font-semibold tracking-wide mt-auto text-center sm:text-left">Learn More →</span>
       ) : (
-        <span className="text-[#f59e0b] text-sm font-semibold tracking-wide mt-auto">Coming soon</span>
+        <span className="text-[#f59e0b] text-sm font-semibold tracking-wide mt-auto text-center sm:text-left">Coming soon</span>
       )}
     </div>
   )

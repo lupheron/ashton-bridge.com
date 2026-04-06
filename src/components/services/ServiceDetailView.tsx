@@ -57,13 +57,13 @@ export default function ServiceDetailView({ content }: Props) {
           {content.features.map(({ title, description, Icon }) => (
             <div
               key={title}
-              className={`rounded-[35px] border border-blue-900 bg-primary p-8 flex flex-col gap-4 ${cardHover}`}
+              className={`rounded-[35px] border border-blue-900 bg-primary p-8 flex flex-col items-center text-center gap-4 ${cardHover}`}
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-full border border-text/35 bg-secondary/80">
                 <Icon className="text-text" style={{ fontSize: 26 }} />
               </div>
-              <h3 className="text-xl font-bold text-white">{title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
+              <h3 className="text-xl font-bold text-white text-center">{title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed text-center">{description}</p>
             </div>
           ))}
         </div>
@@ -74,20 +74,20 @@ export default function ServiceDetailView({ content }: Props) {
         className="ab-page-enter mb-16 md:mb-20 rounded-[35px] border border-white/10 bg-tertiary/90 px-6 py-12 sm:px-10 sm:py-14 shadow-[0_0_40px_rgba(74,158,255,0.08)] max-w-6xl mx-auto"
         style={{ animationDelay: '180ms' }}
       >
-        <h4 className="text-text font-bold tracking-wider uppercase text-sm mb-2">How It Works</h4>
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-10 md:mb-14">Your path from start to scale</h2>
+        <h4 className="text-text font-bold tracking-wider uppercase text-sm mb-2 text-center">How It Works</h4>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-10 md:mb-14 text-center">Your path from start to scale</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           {content.steps.map((step, index) => (
-            <div key={step.title} className="relative pt-4">
+            <div key={step.title} className="relative pt-4 text-center">
               <span
-                className="pointer-events-none select-none absolute -top-2 left-0 text-[4.5rem] sm:text-[5rem] font-bold leading-none text-white/[0.06]"
+                className="pointer-events-none select-none absolute -top-2 left-1/2 -translate-x-1/2 text-[4.5rem] sm:text-[5rem] font-bold leading-none text-white/[0.06]"
                 aria-hidden
               >
                 {index + 1}
               </span>
-              <div className="relative z-10 pl-1">
-                <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{step.description}</p>
+              <div className="relative z-10">
+                <h3 className="text-lg font-bold text-white mb-2 text-center">{step.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed text-center">{step.description}</p>
               </div>
             </div>
           ))}
@@ -145,7 +145,7 @@ export default function ServiceDetailView({ content }: Props) {
         className={`ab-page-enter rounded-[35px] border border-text/20 bg-secondary px-8 py-12 sm:px-12 sm:py-14 text-center ${cardHover} max-w-6xl mx-auto`}
         style={{ animationDelay: '280ms' }}
       >
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">{content.cta.heading}</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 text-center">{content.cta.heading}</h2>
         <p className="text-gray-400 max-w-xl mx-auto mb-8 text-sm sm:text-base leading-relaxed">
           {content.cta.subtext}
         </p>
