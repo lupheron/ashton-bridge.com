@@ -100,14 +100,22 @@ export default function ServiceDetailView({ content }: Props) {
         <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-10 md:mb-12">
           {content.pricingPlans.length > 1 ? 'Choose your plan' : 'Investment'}
         </h2>
-        <div className="flex flex-col gap-8 items-center max-w-6xl mx-auto">
+        <div
+          className={`max-w-6xl mx-auto gap-8 ${
+            content.pricingPlans.length > 1
+              ? 'grid grid-cols-1 lg:grid-cols-2 items-stretch'
+              : 'flex flex-col items-center'
+          }`}
+        >
           {content.pricingPlans.map(plan => {
             const pill =
               plan.badge ?? (plan.featured ? 'Full package' : null)
             return (
             <div
               key={plan.name}
-              className={`w-full max-w-[46rem] rounded-[35px] border bg-secondary/60 p-8 sm:p-10 md:p-12 text-center ${cardHover} ${
+              className={`w-full max-w-[46rem] lg:max-w-none rounded-[35px] border bg-secondary/60 p-8 sm:p-10 md:p-12 text-center ${
+                content.pricingPlans.length > 1 ? 'h-full' : ''
+              } ${cardHover} ${
                 plan.featured
                   ? 'border-text/50 shadow-[0_0_50px_-10px_rgba(74,158,255,0.35)] ring-1 ring-text/25'
                   : 'border-text/20'
