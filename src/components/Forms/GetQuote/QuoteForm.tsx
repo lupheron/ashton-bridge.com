@@ -84,7 +84,7 @@ const QuoteForm = ({ onSuccess }: QuoteFormProps) => {
   }
 
   return (
-    <div className="py-10 px-12 text-white">
+    <div className="py-8 sm:py-10 px-6 sm:px-10 md:px-12 text-white">
       <div className="text-center mb-8">
         <h2 className="text-2xl font-semibold text-text tracking-wide mb-2">
           Request a consultation

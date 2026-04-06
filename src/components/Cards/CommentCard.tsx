@@ -17,7 +17,7 @@ const CommentCard = ({ review, writer, profile_img, company_name, rating }: Comm
   }
 
   return (
-    <div className='w-[450px] min-h-[300px] bg-[#0d1b2a] border border-[#4a9eff]/30 rounded-[25px] p-8 text-white flex flex-col justify-between transition-all duration-300 hover:border-[#4a9eff]/60'>
+    <div className='w-[280px] sm:w-[350px] md:w-[420px] lg:w-[450px] min-h-[240px] sm:min-h-[280px] md:min-h-[300px] bg-[#0d1b2a] border border-[#4a9eff]/30 rounded-[25px] p-5 sm:p-6 md:p-8 text-white flex flex-col justify-between transition-all duration-300 hover:border-[#4a9eff]/60'>
       <div>
         <div className='flex gap-1 mb-6'>
           {[...Array(5)].map((_, i) => (

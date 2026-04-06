@@ -16,11 +16,11 @@ export default function ServiceDetailView({ content }: Props) {
   const HeroIcon = content.HeroIcon
 
   return (
-    <div className="font-roboto text-white pb-8">
+    <div className="font-roboto text-white pb-8 px-3 sm:px-5 md:px-6">
       <div className="ab-page-enter mb-10" style={{ animationDelay: '0ms' }}>
         <Link
           href="/services"
-          className="inline-flex items-center justify-center gap-2 text-text text-sm font-semibold tracking-wide ml-5 liquid-button w-14 h-14 rounded-[35px] border-none"
+          className="inline-flex items-center justify-center gap-2 text-text text-sm font-semibold tracking-wide ml-1 sm:ml-2 liquid-button w-14 h-14 rounded-[35px] border-none"
         >
           ← 
         </Link>
@@ -71,7 +71,7 @@ export default function ServiceDetailView({ content }: Props) {
 
       {/* How it works */}
       <section
-        className="ab-page-enter mb-16 md:mb-20 rounded-[35px] border border-white/10 bg-tertiary/90 px-6 py-12 sm:px-10 sm:py-14 shadow-[0_0_40px_rgba(74,158,255,0.08)]"
+        className="ab-page-enter mb-16 md:mb-20 rounded-[35px] border border-white/10 bg-tertiary/90 px-6 py-12 sm:px-10 sm:py-14 shadow-[0_0_40px_rgba(74,158,255,0.08)] max-w-6xl mx-auto"
         style={{ animationDelay: '180ms' }}
       >
         <h4 className="text-text font-bold tracking-wider uppercase text-sm mb-2">How It Works</h4>
@@ -95,23 +95,19 @@ export default function ServiceDetailView({ content }: Props) {
       </section>
 
       {/* Pricing */}
-      <section className="ab-page-enter mb-16 md:mb-20 px-2" style={{ animationDelay: '220ms' }}>
+      <section className="ab-page-enter mb-16 md:mb-20" style={{ animationDelay: '220ms' }}>
         <p className="text-text font-bold tracking-wider uppercase text-xs mb-2 text-center">Pricing</p>
         <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-10 md:mb-12">
           {content.pricingPlans.length > 1 ? 'Choose your plan' : 'Investment'}
         </h2>
-        <div
-          className={`grid gap-8 max-w-6xl mx-auto ${
-            content.pricingPlans.length > 1 ? 'grid-cols-1 lg:grid-cols-2' : 'grid-cols-1 justify-items-center'
-          }`}
-        >
+        <div className="flex flex-col gap-8 items-center max-w-6xl mx-auto">
           {content.pricingPlans.map(plan => {
             const pill =
               plan.badge ?? (plan.featured ? 'Full package' : null)
             return (
             <div
               key={plan.name}
-              className={`w-full max-w-lg rounded-[35px] border bg-secondary/60 p-10 sm:p-12 text-center ${cardHover} ${
+              className={`w-full max-w-[46rem] rounded-[35px] border bg-secondary/60 p-8 sm:p-10 md:p-12 text-center ${cardHover} ${
                 plan.featured
                   ? 'border-text/50 shadow-[0_0_50px_-10px_rgba(74,158,255,0.35)] ring-1 ring-text/25'
                   : 'border-text/20'
@@ -146,7 +142,7 @@ export default function ServiceDetailView({ content }: Props) {
 
       {/* CTA banner — solid bg so parent layout gradient doesn’t bleed through */}
       <section
-        className={`ab-page-enter rounded-[35px] border border-text/20 bg-secondary px-8 py-12 sm:px-12 sm:py-14 text-center ${cardHover}`}
+        className={`ab-page-enter rounded-[35px] border border-text/20 bg-secondary px-8 py-12 sm:px-12 sm:py-14 text-center ${cardHover} max-w-6xl mx-auto`}
         style={{ animationDelay: '280ms' }}
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">{content.cta.heading}</h2>

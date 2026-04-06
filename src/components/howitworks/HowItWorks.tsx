@@ -61,14 +61,14 @@ const platformOverview = [
 
 const HowItWorks = () => {
     return (
-        <div id='howitworks' className='px-50'>
-            <div className='w-full h-[767px] bg-secondary px-50 flex items-center justify-center gap-20 mt-40 border-1 rounded-[35px]'>
-                <div className='flex flex-col items-center justify-center text-white'>
+        <div id='howitworks' className='px-4 sm:px-8 md:px-10 lg:px-12'>
+            <div className='w-full bg-secondary px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col items-center justify-center gap-8 sm:gap-12 mt-16 sm:mt-24 md:mt-32 lg:mt-40 border border-white/10 rounded-[35px] py-12 sm:py-16 md:py-20'>
+                <div className='flex flex-col items-center justify-center text-white text-center'>
                     <div>
-                        <h1 className='text-[45px] font-bold text-white leading-tight'>Getting started is simple and fast</h1>
+                        <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold text-white leading-tight'>Getting started is simple and fast</h1>
                     </div>
-                    <ArrowDownwardIcon className='text-white mt-20 rounded-full p-2 bg-primary liquid-button' fontSize="inherit" style={{ fontSize: '60px' }} />
-                    <h1 className='text-[60px] bg-primary px-10 py-2 rounded-[35px] text-white mt-10 liquid-button'>COMING SOON</h1>
+                    <ArrowDownwardIcon className='text-white mt-8 sm:mt-12 md:mt-16 lg:mt-20 rounded-full p-2 bg-primary liquid-button' fontSize="inherit" style={{ fontSize: '60px' }} />
+                    <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-[60px] bg-primary px-6 sm:px-8 md:px-10 py-2 rounded-[35px] text-white mt-6 sm:mt-8 md:mt-10 liquid-button'>COMING SOON</h1>
                 </div>
             </div>
             <div className='hidden px-50 flex items-center justify-center gap-20 mt-40'>

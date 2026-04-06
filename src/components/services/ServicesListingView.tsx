@@ -43,10 +43,8 @@ const services: ListingService[] = [
 ]
 
 function ServiceCardContent({ service }: { service: ListingService }) {
-  const fadeOnHover = service.comingSoon ? 'group-hover:opacity-0 transition-opacity duration-300' : ''
-
   return (
-    <div className={`relative z-10 flex flex-col h-full ${fadeOnHover}`}>
+    <div className="relative z-10 flex flex-col h-full">
       <div className="flex items-start justify-between gap-4 mb-5">
         <h2 className="text-xl sm:text-2xl font-bold text-white group-hover:text-text transition-colors duration-300">
           {service.title}
@@ -68,7 +66,7 @@ function ServiceCardContent({ service }: { service: ListingService }) {
       {service.href ? (
         <span className="text-text text-sm font-semibold tracking-wide mt-auto">Learn More →</span>
       ) : (
-        <span className="text-gray-500 text-sm font-medium tracking-wide mt-auto">Coming soon</span>
+        <span className="text-[#f59e0b] text-sm font-semibold tracking-wide mt-auto">Coming soon</span>
       )}
     </div>
   )
@@ -104,12 +102,6 @@ export default function ServicesListingView() {
               aria-label={`${service.title} — coming soon`}
             >
               <ServiceCardContent service={service} />
-              <div
-                className="absolute inset-0 z-20 rounded-[35px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 liquid-button flex items-center justify-center pointer-events-none"
-                style={{ border: 'none', outline: 'none' }}
-              >
-                <span className="text-2xl md:text-3xl font-bold text-white tracking-wide">Coming soon</span>
-              </div>
             </div>
           ) : (
             <Link key={service.id} href={service.href!} className={`${cardShell} cursor-pointer`}>
