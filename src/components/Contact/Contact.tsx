@@ -21,7 +21,7 @@ const Contact = () => {
                         <h2 className='text-xl sm:text-2xl md:text-3xl text-center md:text-left'>Location address</h2>
                         <div className='flex items-center justify-center md:justify-start gap-3 sm:gap-5 mt-1 sm:mt-2'>
                             <LocationOnIcon className='text-text shrink-0' />
-                            <p className='text-sm sm:text-base'>20 Mirzo Ulugbek, Samarkand, Uzbekistan</p>
+                            <p className='text-sm sm:text-base'>1000 Northbrook Drive, Suite 129, Trevose, PA 19053</p>
                         </div>
                     </div>
                     <div className='flex flex-col gap-2'>

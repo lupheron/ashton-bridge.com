@@ -10,7 +10,7 @@ const style = {
     transform: 'translate(-50%, -50%)',
     width: 520,
     maxWidth: '92vw',
-    maxHeight: '90vh',
+    maxHeight: { xs: '90vh', lg: 'none' },
     bgcolor: 'transparent',
     border: 'none',
     boxShadow: 'none',
@@ -28,7 +28,7 @@ const ModalDefault = ({ open, handleClose }: { open: boolean, handleClose: () =>
         >
             <Box
                 sx={style}
-                className="!w-[520px] !bg-primary !border-0 liquid-button rounded-2xl shadow-2xl shadow-black/40 overflow-y-auto modal-enter"
+                className="!w-[520px] !bg-primary !border-0 liquid-button rounded-2xl shadow-2xl shadow-black/40 overflow-y-auto lg:overflow-visible modal-enter"
             >
                 <div className="sticky top-0 z-20 flex justify-end px-4 pt-4">
                     <CancelIcon onClick={handleClose} className="cursor-pointer text-white/80 hover:text-white transition-colors" />
