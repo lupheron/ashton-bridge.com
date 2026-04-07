@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { neon } from '@neondatabase/serverless'
 
 type ReviewRow = {
-  id: number
+  id: number | string
   name: string
   role: string
   review: string
@@ -73,12 +73,12 @@ export async function GET() {
     await ensureReviewsTable()
     const sql = getSql()
 
-    const rows = await sql<ReviewRow[]>`
+    const rows = (await sql`
       SELECT id, name, role, review, rating, created_at
       FROM reviews
       ORDER BY created_at DESC
       LIMIT 100
-    `
+    `) as ReviewRow[]
 
     return NextResponse.json({ reviews: rows })
   } catch (err) {
@@ -98,11 +98,12 @@ export async function POST(request: NextRequest) {
     }
 
     const sql = getSql()
-    const [inserted] = await sql<ReviewRow[]>`
+    const insertedRows = (await sql`
       INSERT INTO reviews (name, role, review, rating)
       VALUES (${parsed.value.name}, ${parsed.value.role}, ${parsed.value.review}, ${parsed.value.rating})
       RETURNING id, name, role, review, rating, created_at
-    `
+    `) as ReviewRow[]
+    const [inserted] = insertedRows
 
     return NextResponse.json({ review: inserted }, { status: 201 })
   } catch (err) {
