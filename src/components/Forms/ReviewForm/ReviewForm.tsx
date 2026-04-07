@@ -22,6 +22,8 @@ const inputBase =
   'w-full h-11 rounded-xl border border-white/10 bg-primary px-4 text-white outline-none ' +
   'placeholder:text-gray-500 focus:border-text/40 focus:shadow-[0_0_0_3px_rgba(74,158,255,0.15)] transition-all duration-200'
 
+const MAX_REVIEW_CHARS = 100
+
 const ReviewForm = ({ onSubmitReview }: ReviewFormProps) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -53,8 +55,12 @@ const ReviewForm = ({ onSubmitReview }: ReviewFormProps) => {
       return
     }
 
-    if (cleanReview.length < 25) {
-      setToast({ open: true, message: 'Please write a review with at least 25 characters.', severity: 'error' })
+    if (cleanReview.length > MAX_REVIEW_CHARS) {
+      setToast({
+        open: true,
+        message: `Review must be ${MAX_REVIEW_CHARS} characters or less.`,
+        severity: 'error',
+      })
       return
     }
 
@@ -83,8 +89,8 @@ const ReviewForm = ({ onSubmitReview }: ReviewFormProps) => {
   }
 
   return (
-    <div className="mt-12 sm:mt-14 md:mt-16">
-      <div className="max-w-3xl mx-auto rounded-[35px] border border-white/10 bg-secondary/80 px-5 sm:px-8 md:px-10 py-7 sm:py-9 shadow-[0_0_30px_rgba(74,158,255,0.08)]">
+    <div className="mt-2 sm:mt-14 md:mt-16 w-full">
+      <div className="max-w-3xl mx-auto rounded-[35px] border-0 sm:border sm:border-white/10 bg-secondary/80 px-5 sm:px-8 md:px-10 py-7 sm:py-9 shadow-[0_0_30px_rgba(74,158,255,0.08)]">
         <div className="text-center mb-6 sm:mb-8">
           <h3 className="text-white text-2xl sm:text-3xl font-bold leading-tight">Share your experience</h3>
           <p className="text-gray-400 mt-2 text-sm sm:text-base">
@@ -133,9 +139,13 @@ const ReviewForm = ({ onSubmitReview }: ReviewFormProps) => {
               name="review"
               value={formData.review}
               onChange={handleChange}
+              maxLength={MAX_REVIEW_CHARS}
               className={`${inputBase} h-30 resize-none py-3`}
               placeholder="Tell people about your experience with Ashton-Bridge..."
             />
+            <p className="text-xs text-gray-500 text-right">
+              {formData.review.length}/{MAX_REVIEW_CHARS}
+            </p>
           </div>
 
           <div className="flex flex-col items-start gap-2">

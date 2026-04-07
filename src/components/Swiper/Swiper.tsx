@@ -18,9 +18,9 @@ const InfiniteSwiper = ({ children }: InfiniteSwiperProps) => {
             onMouseEnter={() => swiperRef.current?.swiper?.autoplay?.stop()}
             onMouseLeave={() => swiperRef.current?.swiper?.autoplay?.start()}
         >
-            <div className="absolute left-0 top-0 bottom-0 w-40 z-10 pointer-events-none bg-gradient-to-r from-primary to-transparent" />
+            <div className="absolute left-0 top-0 bottom-0 w-14 sm:w-24 md:w-32 z-10 pointer-events-none bg-gradient-to-r from-primary to-transparent" />
 
-            <div className="absolute right-0 top-0 bottom-0 w-40 z-10 pointer-events-none bg-gradient-to-l from-primary to-transparent" />
+            <div className="absolute right-0 top-0 bottom-0 w-14 sm:w-24 md:w-32 z-10 pointer-events-none bg-gradient-to-l from-primary to-transparent" />
 
             <Swiper
                 ref={swiperRef}

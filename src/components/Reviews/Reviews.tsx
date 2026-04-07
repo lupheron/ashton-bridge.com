@@ -8,20 +8,20 @@ import { type ReviewItem } from '../Forms/ReviewForm/ReviewForm'
 const baseReviews: ReviewItem[] = [
     {
         name: "Tohir.A",
-        role: "Independent Trucker",
-        review: "The mechanic referral service got my truck repaired quickly and at a fair price. No more random searching online.",
+        role: "Fleet Owner",
+        review: "Their SMM campaigns brought us better driver leads in the first month. We finally stopped wasting budget on broad ads and started getting people that match our lanes.",
         rating: 5
     },
     {
         name: "John D.",
-        role: "Driver",
-        review: "I found my dream job through Ashton-Bridge. The platform is easy to use and the jobs are legitimate.",
+        role: "Recruiting Coordinator",
+        review: "Ashton-Bridge helped us structure our Facebook and Instagram ads around real hiring goals. The lead quality improved, and our team now spends less time filtering unqualified applicants.",
         rating: 5
     },
     {
         name: "Jane S.",
         role: "Logistics Manager",
-        review: "Thank you to the Ashton-Bridge team for helping us improve our hiring process. The experience was smooth and reliable, and we appreciate the support.",
+        review: "Thank you to the Ashton-Bridge team for improving our social media targeting. Results were consistent and communication was clear, though we still want to test a few more ad creatives.",
         rating: 4
     }
 ]

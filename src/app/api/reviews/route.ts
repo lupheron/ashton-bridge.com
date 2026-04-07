@@ -17,6 +17,8 @@ type CreateReviewPayload = {
   rating: number
 }
 
+const MAX_REVIEW_CHARS = 100
+
 function getSql() {
   const databaseUrl = process.env.DATABASE_URL?.trim()
   if (!databaseUrl) {
@@ -53,8 +55,8 @@ function validatePayload(payload: Partial<CreateReviewPayload>) {
     return { ok: false as const, error: 'Rating must be an integer between 1 and 5.' }
   }
 
-  if (review.length < 25) {
-    return { ok: false as const, error: 'Review must be at least 25 characters long.' }
+  if (review.length > MAX_REVIEW_CHARS) {
+    return { ok: false as const, error: `Review must be ${MAX_REVIEW_CHARS} characters or less.` }
   }
 
   return {
