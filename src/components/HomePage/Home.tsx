@@ -14,7 +14,11 @@ const Home = () => {
 
             <p className='w-full max-w-xl md:max-w-2xl lg:max-w-3xl text-base sm:text-lg md:text-[20px] text-gray-500'>Ashton-Bridge connects truck drivers, freight companies, and IT solutions under one unified platform — built for the modern marketplace.</p>
             <div className='flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full sm:w-auto pt-1 sm:pt-0'>
-                <DefaultButton text="Get Started" customClasses='w-full sm:w-40 bg-text text-white rounded-[35px]' onClick={openQuote} />
+                <DefaultButton
+                    text="Get Started"
+                    customClasses='w-full sm:w-40 h-12 text-base font-medium bg-text text-white rounded-[35px]'
+                    onClick={openQuote}
+                />
                 <Link href="/services" className='inline-flex items-center justify-center w-full sm:w-40 h-12 rounded-[35px] bg-transparent text-text border border-text text-base font-medium hover:bg-text/10 transition-all duration-300'>
                     Explore Services
                 </Link>

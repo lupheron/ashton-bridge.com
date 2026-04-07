@@ -17,15 +17,18 @@ const CommentCard = ({ review, writer, profile_img, company_name, rating }: Comm
   }
 
   return (
-    <div className='w-[280px] sm:w-[350px] md:w-[420px] lg:w-[450px] min-h-[240px] sm:min-h-[280px] md:min-h-[300px] bg-[#0d1b2a] border border-[#4a9eff]/30 rounded-[25px] p-5 sm:p-6 md:p-8 text-white flex flex-col justify-between transition-all duration-300 hover:border-[#4a9eff]/60'>
+    <div className='w-[280px] sm:w-[350px] md:w-[420px] lg:w-[450px] h-[260px] sm:h-[290px] md:h-[310px] bg-[#0d1b2a] border border-[#4a9eff]/30 rounded-[25px] p-5 sm:p-6 md:p-8 text-white flex flex-col justify-between transition-all duration-300 hover:border-[#4a9eff]/60'>
       <div>
         <div className='flex gap-1 mb-6'>
           {[...Array(5)].map((_, i) => (
             <StarIcon key={i} className={i < rating ? 'text-yellow-500' : 'text-gray-600'} style={{ fontSize: '20px' }} />
           ))}
         </div>
-        <p className='text-[18px] italic leading-relaxed text-gray-200'>
-          "{review}"
+        <p
+          className='text-[18px] italic leading-relaxed text-gray-200 overflow-hidden'
+          style={{ display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}
+        >
+          &quot;{review}&quot;
         </p>
       </div>
 

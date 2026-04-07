@@ -1,10 +1,13 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useMemo, useState } from 'react'
 import CommentCard from '../Cards/CommentCard'
 import InfiniteSwiper from '../Swiper/Swiper'
+import { type ReviewItem } from '../Forms/ReviewForm/ReviewForm'
 
-const reviews = [
+const baseReviews: ReviewItem[] = [
     {
-        name: "Roberto P.",
+        name: "Tohir.A",
         role: "Independent Trucker",
         review: "The mechanic referral service got my truck repaired quickly and at a fair price. No more random searching online.",
         rating: 5
@@ -18,12 +21,36 @@ const reviews = [
     {
         name: "Jane S.",
         role: "Logistics Manager",
-        review: "Ashton-Bridge has helped us find the best drivers for our company. The platform is reliable and the jobs are legitimate.",
-        rating: 5
+        review: "Thank you to the Ashton-Bridge team for helping us improve our hiring process. The experience was smooth and reliable, and we appreciate the support.",
+        rating: 4
     }
 ]
 
-const Reviews = () => {
+type ReviewsProps = {
+    refreshSignal?: number
+}
+
+const Reviews = ({ refreshSignal = 0 }: ReviewsProps) => {
+    const [dbReviews, setDbReviews] = useState<ReviewItem[]>([])
+
+    useEffect(() => {
+        const loadReviews = async () => {
+            try {
+                const res = await fetch('/api/reviews', { cache: 'no-store' })
+                if (!res.ok) return
+                const data = await res.json()
+                if (Array.isArray(data.reviews)) {
+                    setDbReviews(data.reviews as ReviewItem[])
+                }
+            } catch (err) {
+                console.error('Failed to load reviews:', err)
+            }
+        }
+        void loadReviews()
+    }, [refreshSignal])
+
+    const mergedReviews = useMemo(() => [...dbReviews, ...baseReviews], [dbReviews])
+
     return (
         <div className='mt-8 sm:mt-10 px-4 sm:px-8 md:px-10 lg:px-12'>
             <div className='mb-8 sm:mb-12 md:mb-16 text-center sm:text-left'>
@@ -33,9 +60,9 @@ const Reviews = () => {
             </div>
             <div className='px-2 sm:px-6 md:px-10 overflow-hidden'>
                 <InfiniteSwiper>
-                    {[...reviews, ...reviews, ...reviews].map((rev, index) => (
+                    {[...mergedReviews, ...mergedReviews, ...mergedReviews].map((rev, index) => (
                         <CommentCard
-                            key={index}
+                            key={`${rev.name}-${index}`}
                             writer={rev.name}
                             company_name={rev.role}
                             review={rev.review}
