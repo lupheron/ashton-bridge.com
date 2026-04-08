@@ -22,13 +22,17 @@ type CreateReviewPayload = {
 const MAX_REVIEW_CHARS = 100
 
 function getSql() {
+  // Prefer Neon/Vercel integration vars first, then project-level fallbacks.
   const rawDatabaseUrl =
+    process.env.STORAGE_POSTGRES_URL?.trim() ||
+    process.env.STORAGE_DATABASE_URL_UNPOOLED?.trim() ||
+    process.env.STORAGE_POSTGRES_PRISMA_URL?.trim() ||
+    process.env.STORAGE_URL?.trim() ||
     process.env.DATABASE_URL?.trim() ||
     process.env.DATABASE_URL_UNPOOLED?.trim() ||
     process.env.POSTGRES_URL?.trim() ||
     process.env.POSTGRES_URL_NON_POOLING?.trim() ||
-    process.env.POSTGRES_PRISMA_URL?.trim() ||
-    process.env.STORAGE_URL?.trim()
+    process.env.POSTGRES_PRISMA_URL?.trim()
 
   if (!rawDatabaseUrl) {
     throw new Error('Missing database URL env var. Set DATABASE_URL (or POSTGRES_URL/STORAGE_URL).')
