@@ -20,9 +20,13 @@ type CreateReviewPayload = {
 const MAX_REVIEW_CHARS = 100
 
 function getSql() {
-  const databaseUrl = process.env.DATABASE_URL?.trim()
+  const databaseUrl =
+    process.env.DATABASE_URL?.trim() ||
+    process.env.POSTGRES_URL?.trim() ||
+    process.env.STORAGE_URL?.trim()
+
   if (!databaseUrl) {
-    throw new Error('Missing DATABASE_URL env var')
+    throw new Error('Missing database URL env var. Set DATABASE_URL (or POSTGRES_URL/STORAGE_URL).')
   }
   return neon(databaseUrl)
 }
@@ -85,6 +89,9 @@ export async function GET() {
     return NextResponse.json({ reviews: rows })
   } catch (err) {
     console.error('GET /api/reviews error:', err)
+    if (err instanceof Error && err.message.includes('Missing database URL')) {
+      return NextResponse.json({ error: err.message }, { status: 500 })
+    }
     return NextResponse.json({ error: 'Failed to fetch reviews.' }, { status: 500 })
   }
 }
@@ -110,6 +117,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ review: inserted }, { status: 201 })
   } catch (err) {
     console.error('POST /api/reviews error:', err)
+    if (err instanceof Error && err.message.includes('Missing database URL')) {
+      return NextResponse.json({ error: err.message }, { status: 500 })
+    }
     return NextResponse.json({ error: 'Failed to save review.' }, { status: 500 })
   }
 }
