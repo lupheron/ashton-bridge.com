@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { neon } from '@neondatabase/serverless'
 
+export const runtime = 'nodejs'
+
 type ReviewRow = {
   id: number | string
   name: string
@@ -22,7 +24,10 @@ const MAX_REVIEW_CHARS = 100
 function getSql() {
   const databaseUrl =
     process.env.DATABASE_URL?.trim() ||
+    process.env.DATABASE_URL_UNPOOLED?.trim() ||
     process.env.POSTGRES_URL?.trim() ||
+    process.env.POSTGRES_URL_NON_POOLING?.trim() ||
+    process.env.POSTGRES_PRISMA_URL?.trim() ||
     process.env.STORAGE_URL?.trim()
 
   if (!databaseUrl) {
@@ -89,10 +94,8 @@ export async function GET() {
     return NextResponse.json({ reviews: rows })
   } catch (err) {
     console.error('GET /api/reviews error:', err)
-    if (err instanceof Error && err.message.includes('Missing database URL')) {
-      return NextResponse.json({ error: err.message }, { status: 500 })
-    }
-    return NextResponse.json({ error: 'Failed to fetch reviews.' }, { status: 500 })
+    const message = err instanceof Error ? err.message : 'Failed to fetch reviews.'
+    return NextResponse.json({ error: message }, { status: 500 })
   }
 }
 
@@ -117,9 +120,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ review: inserted }, { status: 201 })
   } catch (err) {
     console.error('POST /api/reviews error:', err)
-    if (err instanceof Error && err.message.includes('Missing database URL')) {
-      return NextResponse.json({ error: err.message }, { status: 500 })
-    }
-    return NextResponse.json({ error: 'Failed to save review.' }, { status: 500 })
+    const message = err instanceof Error ? err.message : 'Failed to save review.'
+    return NextResponse.json({ error: message }, { status: 500 })
   }
 }
