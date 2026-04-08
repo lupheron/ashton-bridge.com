@@ -22,7 +22,7 @@ type CreateReviewPayload = {
 const MAX_REVIEW_CHARS = 100
 
 function getSql() {
-  const databaseUrl =
+  const rawDatabaseUrl =
     process.env.DATABASE_URL?.trim() ||
     process.env.DATABASE_URL_UNPOOLED?.trim() ||
     process.env.POSTGRES_URL?.trim() ||
@@ -30,10 +30,24 @@ function getSql() {
     process.env.POSTGRES_PRISMA_URL?.trim() ||
     process.env.STORAGE_URL?.trim()
 
-  if (!databaseUrl) {
+  if (!rawDatabaseUrl) {
     throw new Error('Missing database URL env var. Set DATABASE_URL (or POSTGRES_URL/STORAGE_URL).')
   }
-  return neon(databaseUrl)
+
+  // Some dashboards save connection URLs as //host/... (without protocol).
+  const normalizedUrl = rawDatabaseUrl.startsWith('//')
+    ? `postgresql:${rawDatabaseUrl}`
+    : rawDatabaseUrl
+
+  try {
+    // Validate shape early to return a clean API error.
+    // eslint-disable-next-line no-new
+    new URL(normalizedUrl)
+  } catch {
+    throw new Error(`Database URL is invalid: ${rawDatabaseUrl}`)
+  }
+
+  return neon(normalizedUrl)
 }
 
 async function ensureReviewsTable() {
