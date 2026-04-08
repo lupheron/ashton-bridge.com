@@ -8,20 +8,20 @@ import { type ReviewItem } from '../Forms/ReviewForm/ReviewForm'
 const baseReviews: ReviewItem[] = [
     {
         name: "Tohir.A",
-        role: "Fleet Owner",
-        review: "Their SMM campaigns brought us better driver leads in the first month. We finally stopped wasting budget on broad ads and started getting people that match our lanes.",
+        role: "HR Manager",
+        review: "We got more relevant driver applications after they adjusted our ad targeting. Good support and clear communication.",
         rating: 5
     },
     {
         name: "John D.",
-        role: "Recruiting Coordinator",
-        review: "Ashton-Bridge helped us structure our Facebook and Instagram ads around real hiring goals. The lead quality improved, and our team now spends less time filtering unqualified applicants.",
+        role: "HR Recruiter",
+        review: "The campaigns are simple to track, and lead quality is better than before. It saved our team a lot of time.",
         rating: 5
     },
     {
         name: "Jane S.",
-        role: "Logistics Manager",
-        review: "Thank you to the Ashton-Bridge team for improving our social media targeting. Results were consistent and communication was clear, though we still want to test a few more ad creatives.",
+        role: "HR Specialist",
+        review: "Thank you to the team. Results are good so far, and we are now testing a few more ad creatives.",
         rating: 4
     }
 ]
