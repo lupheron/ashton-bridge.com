@@ -67,7 +67,7 @@ const MainContainer = () => {
                 type="button"
                 aria-label="Open review form"
                 onClick={() => setIsReviewOpen(true)}
-                className='fixed flex items-center justify-center bottom-10 right-12 bg-text text-primary rounded-full w-10 h-10 shadow-lg cursor-pointer hover:w-[50px] hover:h-[50px] transition-[width,height] duration-[150ms] ease-out'
+                className='fixed z-[90] flex items-center justify-center bottom-10 right-12 bg-text text-primary rounded-full w-10 h-10 shadow-lg cursor-pointer hover:w-[50px] hover:h-[50px] transition-[width,height] duration-[150ms] ease-out'
             >
                 <AddCommentIcon />
             </button>

@@ -8,7 +8,7 @@ const Home = () => {
     const { openQuote } = useQuoteModal()
 
     return (
-        <div id="home" className='px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 flex flex-col items-center justify-center min-h-[calc(100svh-11rem)] sm:min-h-0 pt-8 pb-6 sm:py-0 gap-6 sm:gap-7 text-center scroll-mt-28'>
+        <div id="home" className='px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 flex flex-col items-center justify-center min-h-[calc(109svh-20rem)] sm:min-h-0 pt-8 pb-6 sm:py-0 gap-6 sm:gap-7 text-center scroll-mt-28'>
             <DefaultButton text="Simplify your workflow" customClasses='mt-2 sm:mt-0 w-52 sm:w-60 h-10 sm:h-12 text-sm sm:text-base rounded-[35px] liquid-button' />
             <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-[76px] xl:text-[80px] font-bold text-white leading-tight'>Where <span className='text-text'>Logistics</span> Meets <br className='hidden sm:block' /> Digital Growth</h1>
 
