@@ -13,13 +13,13 @@ const baseReviews: ReviewItem[] = [
         rating: 5
     },
     {
-        name: "John D.",
-        role: "HR Recruiter",
+        name: "Jackson",
+        role: "CEO",
         review: "The campaigns are simple to track, and lead quality is better than before. It saved our team a lot of time.",
         rating: 5
     },
     {
-        name: "Jane S.",
+        name: "Simon Patel",
         role: "HR Specialist",
         review: "Thank you to the team. Results are good so far, and we are now testing a few more ad creatives.",
         rating: 4
