@@ -8,6 +8,7 @@ import HowItWorks from '../howitworks/HowItWorks'
 import Begin from '../Begin/Begin'
 import Reviews from '../Reviews/Reviews'
 import Contact from '../Contact/Contact'
+import Faq from '../Faq/Faq'
 import Footer from '../Footer/Footer'
 import AboutUs from '../AboutUs/AboutUs'
 import AddCommentIcon from '@mui/icons-material/AddComment';
@@ -57,6 +58,7 @@ const MainContainer = () => {
             <div className='bg-[linear-gradient(to_bottom,#33627d_0px,var(--color-primary)_250px,var(--color-primary)_calc(100%-250px),#24475c_100%)] rounded-[35px] py-8 sm:py-10 mt-3 sm:mt-4 md:mt-5'>
                 <Reviews refreshSignal={reviewsRefreshSignal} />
                 <Contact />
+                <Faq />
             </div>
 
             <div className='bg-[linear-gradient(to_top,var(--color-primary)_calc(100%-250px),#24475c_100%)] rounded-[35px] py-8 sm:py-10 mt-3 sm:mt-4 md:mt-5'>
