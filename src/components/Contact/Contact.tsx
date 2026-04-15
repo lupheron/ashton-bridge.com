@@ -28,7 +28,7 @@ const Contact = () => {
                         <h2 className='text-xl sm:text-2xl md:text-3xl text-center md:text-left'>Email Address</h2>
                         <div className='flex items-center justify-center md:justify-start gap-3 sm:gap-5 mt-1 sm:mt-2'>
                             <EmailIcon className='text-text shrink-0' />
-                            <p className='text-sm sm:text-base'>drenixit@gmail.com</p>
+                            <p className='text-sm sm:text-base'>ashtonbridgellc@gmail.com</p>
                         </div>
                     </div>
                 </div>
