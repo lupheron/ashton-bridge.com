@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Ashton Bridge",
   description: "Ashton Bridge",
   icons: {
-    icon: "/ashton-bridge-logo.png",
+    icon: "/icon.png",
   },
 };
 
